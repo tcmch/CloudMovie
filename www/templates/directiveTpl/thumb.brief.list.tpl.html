@@ -1,0 +1,11 @@
+<ion-list>
+  <!-- 定义方法时 {inx:phone.id} 表示定义一个参数名称为inx的参数，并且用phone.id作为该参数的值-->
+  <ion-item class="item-remove-animate  item-icon-right item-thumbnail-left"
+            collection-repeat="phone in phones" ng-click="columnClickAt({inx:phone.id})">
+    <img class="thumb" src="{{phone.imageUrl}}">
+
+    <div>{{phone.name}}</div>
+    <p>{{phone.snippet}}</p>
+    <i class="icon  ion-chatbubble-working"></i>
+  </ion-item>
+</ion-list>

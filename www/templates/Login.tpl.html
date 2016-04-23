@@ -1,0 +1,38 @@
+<!-- 登录页面 -->
+<ion-view>
+  <ion-content class="padding">
+    <!-- 登录页面 -->
+    <div data-role="page" id="page_login">
+      <div data-role="content">
+        <div class="model-header">
+          <img src="img/logo.png" alt="logo of cloudexplorer"/>
+        </div>
+        <div class="model-body" style="padding-top: 10px; ">
+          <fieldset>
+            <div class="form-group">
+
+              <input type="text" placeholder="手机号" ng-model="loginData.cellphone"
+                     class="form-control ng-pristine ng-valid ng-touched"/>
+            </div>
+
+
+            <div class="form-group">
+              <input class="form-control ng-pristine ng-valid ng-touched" type="password" placeholder="密码"
+                     ng-model="loginData.password"/>
+            </div>
+
+            <a ng-click="loginTapped()" data-role="button" class="btn btn-lg btn-primary btn-block">登录</a>
+          </fieldset>
+        </div>
+
+
+        <div style="float:right;text-align:right;font-size:small">
+          <br/><br/>
+          <a class="btn" style="text-decoration:none" ng-click="openRPC()"></a>
+          <br/><br/>
+          <a href="javascript:clearAllUsedInfo();" style="text-decoration:none">忘记密码</a>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

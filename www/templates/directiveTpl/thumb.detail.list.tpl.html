@@ -1,0 +1,30 @@
+<ion-list>
+  <!-- 定义方法时 {inx:phone.id} 表示定义一个参数名称为inx的参数，并且用phone.id作为该参数的值-->
+  <ion-item class="item-remove-animate  item-icon-right item-thumbnail-left"
+            collection-repeat="phone in phones" ng-click="columnClickAt({inx:phone.id})">
+    <img class="thumb" src="{{phone.imageUrl}}">
+
+    <div class="row" style="width:100%">
+      <div class="col-90">{{phone.name}}</div>
+      <span class="col-10 col-center" style="color: #ff4d48; font-size: small;">$ {{phone.price||'--'}}起</span>
+    </div>
+    <div class="row">
+      <p>{{phone.snippet}}</p>
+    </div>
+
+    <div class="row">
+      <div class="col-75 col-center">
+        <style>
+          img {
+            margin: 5px 4px 0px 4px;
+          }
+        </style>
+        <img ng-repeat="icon in icons" src="{{icon.Url}}" height="25px" ng-click="icon.clicked(phone.id)"/>
+        <!--<img src="img/Common/kexin.png" height="25px"/>
+        <img src="img/Common/baike_logo.gif" height="25px"/>
+        <img src="img/Common/call.jpg" height="25px"/>
+        <img src="img/Common/video.png" height="25px"/> -->
+      </div>
+    </div>
+  </ion-item>
+</ion-list>

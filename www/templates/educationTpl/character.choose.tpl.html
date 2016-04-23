@@ -1,0 +1,18 @@
+<ion-view view-title="{{viewTitle}}">
+
+  <ion-content class="padding">
+
+    <div class="list">
+
+      <a class="item item-thumbnail-left" ng-repeat="character in characters" ui-sref="{{character.sref}}"
+         ng-click="clickAt(character.id)">
+        <img src="{{character.imageUrl}}"/>
+
+        <h2>{{character.name}}</h2>
+
+        <p>{{character.desc}}</p>
+      </a>
+    </div>
+
+  </ion-content>
+</ion-view>

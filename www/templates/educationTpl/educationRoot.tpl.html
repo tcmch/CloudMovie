@@ -1,0 +1,54 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable bar-positive">
+      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button id="leftMenu" class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+
+      <ion-nav-buttons side="right">
+        <a menu-toggle="right" ui-sref="main.service">
+          <i class="button button-icon button-clear ion-ios-home"></i>
+        </a>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-nav-view name="menuContent"></ion-nav-view>
+
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" class="loginBg" width="150">
+    <ion-header-bar class="bar-stable bar-positive">
+      <h1 class="title">云私塾</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list id="menuLinks">
+        <ion-item menu-close ui-sref="education.charchoose">
+          <i class="icon ion-arrow-swap"> 角色切换</i>
+        </ion-item>
+        <!-- 学生角色操作 -->
+        <ion-item menu-close href="#/education/stcourse" ng-if="characterType === 1">
+          <i class="icon ion-android-apps"> 自选课程</i>
+        </ion-item>
+        <ion-item menu-close  ng-if="characterType === 1">
+          <i class="icon ion-ios-albums"> 课程套餐</i>
+        </ion-item>
+        <ion-item menu-close href="#/education/stoperation"  ng-if="characterType === 1">
+          <i class="icon ion-more"> 更多操作</i>
+        </ion-item>
+
+        <!-- 教师角色操作 -->
+        <ion-item menu-close href="#/education/tedata"  ng-if="characterType === 2">
+          <i class="icon ion-folder"> 订单管理</i>
+        </ion-item>
+        <ion-item menu-close ui-sref="education.temanager"  ng-if="characterType === 2">
+          <i class="icon ion-filing"> 服务管理</i>
+        </ion-item>
+        <ion-item menu-close ui-sref="education.tecommun"  ng-if="characterType === 2">
+          <i class="icon ion-chatbubbles"> 师生互动</i>
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

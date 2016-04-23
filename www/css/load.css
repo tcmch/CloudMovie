@@ -1,0 +1,16 @@
+/**
+ * Created by duocai on 2016/1/20.
+ * 加载动画api较低不支持svg
+ */
+
+ /*加载动画*/
+.load-animation {
+  text-align: center;
+  margin-top: 100px !important;
+  margin-bottom: 40px !important;
+}
+/*加载动画*/
+.spinner svg {
+  width: 20% !important;
+  height: 85px !important;
+}

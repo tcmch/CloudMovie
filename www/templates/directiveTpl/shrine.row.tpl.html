@@ -1,0 +1,32 @@
+<!--
+We will create a family tree using just CSS(3)
+The markup will be simple nested lists
+-->
+<script id="rescursion" type="text/ng-template">
+
+  <li ng-repeat="item in cate">
+    <a class="tab-item">
+      <img src="img/Amodel/person.jpg" width="40px" />
+      <p>{{item.name}}</p>
+    </a>
+
+    <ul ng-if="item.childs.length" ng-include="'rescursion'" ng-init="cate=item.childs"></ul>
+  </li>
+
+</script>
+
+<ion-nav-view view-title="祠堂">
+  <ion-nav-bar>
+    <ion-nav-title>家族祠堂</ion-nav-title>
+  </ion-nav-bar>
+  <ion-content class="has-header">
+    <ion-scroll direction="x|y" scrollbar-x="false" scrollbar-y="false">
+      <div class="tree" style="width:10020px; ">
+
+        <ul ng-include="'rescursion'" ng-init="cate=treeData">
+        </ul>
+
+      </div>
+    </ion-scroll>
+  </ion-content>
+</ion-nav-view>
